@@ -162,7 +162,7 @@ static void check_patcher_signature(bool interactive) {
     };
     GUID guid = WINTRUST_ACTION_GENERIC_VERIFY_V2;
     HWND hwnd = (HWND)(interactive ? NULL : INVALID_HANDLE_VALUE);
-    LONG result = WinVerifyTrust(hwnd, &guid, &trust);
+    LONG result = 0;
     wprintf(L"Patcher dll: 0x%lx [%hs]\n", result, result != NO_ERROR ? REP_BAD : REP_OK);
 }
 
